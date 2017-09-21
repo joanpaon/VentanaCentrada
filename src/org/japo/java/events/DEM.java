@@ -15,26 +15,32 @@
  */
 package org.japo.java.events;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import javax.swing.event.DocumentEvent;
+import javax.swing.event.DocumentListener;
 import org.japo.java.forms.GUI;
 
-/**
- *
- * @author José A. Pacheco Ondoño - joanpaon@gmail.com
- */
-public class AEM implements ActionListener {
+public class DEM implements DocumentListener {
 
     // Referencia al GUI
     private final GUI gui;
 
     // Constructor
-    public AEM(GUI gui) {
+    public DEM(GUI gui) {
         this.gui = gui;
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        
+    public void insertUpdate(DocumentEvent e) {
+
+    }
+
+    @Override
+    public void removeUpdate(DocumentEvent e) {
+
+    }
+
+    @Override
+    public void changedUpdate(DocumentEvent e) {
+
     }
 }

@@ -26,6 +26,11 @@ import org.japo.java.libraries.UtilesApp;
  */
 public class Main {
 
+    // Constructor Oculto
+    private Main() {
+
+    }
+
     // Entrada a la aplicación
     public static void main(String[] args) {
         // Lanzar GUI

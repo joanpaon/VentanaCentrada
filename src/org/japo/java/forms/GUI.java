@@ -24,7 +24,7 @@ import org.japo.java.libraries.UtilesSwing;
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public class GUI extends JFrame {
+public final class GUI extends JFrame {
 
     // Propiedades App
     public static final String PRP_LOOK_AND_FEEL_PROFILE = "form_look_and_feel_profile";
@@ -45,7 +45,7 @@ public class GUI extends JFrame {
     public static final String DEF_FORM_FONT_RESOURCE = "fonts/default_font.ttf";
 
     // Referencias
-    private Properties prp;
+    private final Properties prp;
 
     // Constructor
     public GUI(Properties prp) {
@@ -71,7 +71,6 @@ public class GUI extends JFrame {
         setContentPane(pnlPpal);
         setTitle(prp.getProperty(PRP_FORM_TITLE, DEF_FORM_TITLE));
         try {
-            // Propiedades >> Tamaño Interfaz
             int height = Integer.parseInt(prp.getProperty(PRP_FORM_HEIGHT));
             int width = Integer.parseInt(prp.getProperty(PRP_FORM_WIDTH));
             setSize(width, height);

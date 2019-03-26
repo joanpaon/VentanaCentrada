@@ -1,5 +1,5 @@
-/* 
- * Copyright 2017 José A. Pacheco Ondoño - joanpaon@gmail.com.
+/*
+ * Copyright 2019 José A. Pacheco Ondoño - joanpaon@gmail.com.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,31 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.japo.java.main;
-
-import java.util.Properties;
-import javax.swing.SwingUtilities;
-import org.japo.java.forms.GUI;
-import org.japo.java.libraries.UtilesApp;
+package org.japo.java.libraries;
 
 /**
  *
  * @author José A. Pacheco Ondoño - joanpaon@gmail.com
  */
-public class Main {
+public final class UtilesURL {
 
-    // Entrada a la aplicación
-    public static void main(String[] args) {
-        // Lanzar GUI
-        SwingUtilities.invokeLater(() -> {
-            // Propiedades App
-            Properties prp = UtilesApp.importarPropiedadesRecurso();
+    // Expresión Regular
+    public static final String ER_URL = "^(https?://)?(([\\w!~*'().&=+$%-]+: )?[\\w!~*'().&=+$%-]+@)?(([0-9]{1,3}\\.){3}[0-9]{1,3}|([\\w!~*'()-]+\\.)*([\\w^-][\\w-]{0,61})?[\\w]\\.[a-z]{2,6})(:[0-9]{1,4})?((/*)|(/+[\\w!~*'().;?:@&=+$,%#-]+)+/*)$";
 
-            // Instanciar GUI
-            GUI gui = new GUI(prp);
-
-            // Mostrar GUI
-            gui.setVisible(true);
-        });
+    // Validar URL
+    public static final boolean validarURL(String url) {
+        return UtilesValidacion.validar(url, ER_URL);
     }
 }

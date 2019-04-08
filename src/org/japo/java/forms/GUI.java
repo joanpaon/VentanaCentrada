@@ -46,6 +46,9 @@ public final class GUI extends JFrame {
 
     // Referencias
     private final Properties prp;
+    
+    // Componentes
+    private JPanel pnlPpal;
 
     // Constructor
     public GUI(Properties prp) {
@@ -65,7 +68,7 @@ public final class GUI extends JFrame {
     // Construcción del IGU
     private void initComponents() {
         // Panel Principal
-        JPanel pnlPpal = new JPanel();
+        pnlPpal = new JPanel();
 
         // Ventana Principal
         setContentPane(pnlPpal);
